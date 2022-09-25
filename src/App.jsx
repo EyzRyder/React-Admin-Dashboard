@@ -2,11 +2,25 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
-import { tooltipComponent } from '@syncfusion/ej2-react-popups';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 const App = () => {
   return (
-    <h1 className='underline text-3xl'>App</h1>
+    <div>
+      <BrowserRouter>
+        <div className='flex relative dark:bg-main-bg'>
+          <div className='fixed right-4 bottom-4' style={{ zIndex: '1000' }}>
+            <TooltipComponent content="Settings" position="Top">
+              <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' style={{
+                background: 'red',
+              borderRadius: '50%'}}>
+                <FiSettings/>
+              </button>
+            </TooltipComponent>
+          </div>
+        </div>
+      </BrowserRouter>
+    </div>
   )
 }
 
