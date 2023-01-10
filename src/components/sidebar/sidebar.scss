@@ -1,0 +1,6 @@
+.sidebar{
+    @apply flex-1;
+    .top{
+        @apply flex h-[50px] items-center justify-center;
+    }
+}
