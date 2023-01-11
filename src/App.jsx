@@ -4,9 +4,7 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import ProductLayout from './Layouts/ProductLayout/ProductLayout';
 import RootLayout from './Layouts/RootLayout/RootLayout';
-import UserLayout from './Layouts/UserLayout/UserLayout';
 
 import Home from "./pages/home/Home"
 import List from './pages/list/List';
@@ -24,13 +22,13 @@ const router = createBrowserRouter(
 
       <Route path='login' element={<Login />} />
 
-      <Route path='users' element={<UserLayout />} >
+      <Route path='users'>
         <Route index element={<List />} />
         <Route path=':userId' element={<Single />} />
         <Route path='new' element={<New />} />
       </Route>
 
-      <Route path='products' element={<ProductLayout />} >
+      <Route path='products' >
         <Route index element={<List />} />
         <Route path=':productId' element={<Single />} />
         <Route path='new' element={<New />} />
