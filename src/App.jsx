@@ -3,7 +3,6 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-  Routes
 } from 'react-router-dom';
 import ProductLayout from './Layouts/ProductLayout/ProductLayout';
 import RootLayout from './Layouts/RootLayout/RootLayout';
