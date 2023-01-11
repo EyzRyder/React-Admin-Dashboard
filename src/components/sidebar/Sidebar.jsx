@@ -1,5 +1,5 @@
 import './sidebar.scss'
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import StoreIcon from '@mui/icons-material/Store';
@@ -17,7 +17,9 @@ export const Sidebar = () => {
     return (
         <nav className="sidebar">
             <div className="top">
-                <span className="logo">Bessi Dev</span>
+                <Link to="/"> 
+                    <span className="logo">Bessi Dev</span>
+                </Link>
             </div>
             <div className="center">
                 <ul>
@@ -30,10 +32,12 @@ export const Sidebar = () => {
                     </li>
                     <p className="title">LISTS</p>
                     <li>
+                        <Link to="/users">
                         <PermIdentityOutlinedIcon className="icon" />
                         <span>
                             Users
-                        </span>
+                            </span>
+                        </Link>
                     </li>
                     <li>
                         <StoreIcon className="icon" />

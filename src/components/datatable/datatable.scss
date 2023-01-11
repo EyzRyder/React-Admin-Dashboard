@@ -1,0 +1,47 @@
+.datatable {
+    @apply h-[600px] p-5;
+
+    .datatableTitle {
+        @apply w-full text-2xl text-gray-500 mb-3 flex items-center justify-between; 
+        .link {
+            @apply text-green-500 font-normal text-base border border-green-500 rounded cursor-pointer;
+        }
+    }
+
+    .cellWithImg {
+        @apply flex items-center;
+
+        .cellImg {
+            @apply w-8 h-8 rounded-full object-cover mr-5;
+        }
+    }
+
+    .cellWithStatus {
+        @apply p-1 rounded;
+
+        &.active {
+            @apply text-green-500 bg-[#0080000d];
+        }
+
+
+        &.pending {
+            @apply text-[goldenrod] bg-[#ffd9000d];
+        }
+
+        &.passive {
+            @apply text-[crimson] bg-[#ff00000d];
+        }
+    }
+
+    .cellAction {
+        @apply flex items-center gap-4;
+
+        .viewButton {
+            @apply py-1 px-2 rounded text-GMB-blue border border-blue-900 border-dotted cursor-pointer;
+        }
+
+        .deleteButton {
+            @apply py-1 px-2 rounded text-[crimson] border border-[#dc143c99] border-dotted cursor-pointer;
+        }
+    }
+}

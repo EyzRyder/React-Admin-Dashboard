@@ -1,8 +1,50 @@
-.single{
-    @apply bg-[#FFD700];
+.single {
+    .top {
+        @apply p-5 flex gap-5;
+
+        .left {
+            @apply flex-1 p-5 shadow-[2px_4px_10px_1px_#c9c9c978] relative;
+
+            .editButton {
+                @apply absolute top-0 right-0 p-1 text-sm text-GMB-blue bg-[#7551f818] cursor-pointer rounded-bl;
+            }
+            .item {
+                @apply flex gap-5;
+
+                .itemImg {
+                    @apply w-[100px] h-[100px] rounded-full object-cover;
+                }
+
+                .details {
+                    .itemTitle {
+                        @apply text-4xl mb-3 font-medium text-[#555];
+                    }
+
+                    .detailItem {
+                        @apply text-[#555] text-base mb-3;
+
+                        .itemKey {
+                            @apply mr-1 text-gray-500 font-bold;
+                        }
+
+                        .itemValue {
+                            @apply font-light;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            @apply flex-[2];
+        }
+    }
 
     .title {
-        @apply text-4xl font-bold text-white;
+        @apply text-lg mb-5 text-gray-400 font-bold;
+    }
+
+    .bottom {
+        @apply p-5 my-3 mx-5 shadow-[2px_4px_10px_1px_#c9c9c978];
     }
 }
-
