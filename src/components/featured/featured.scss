@@ -1,0 +1,59 @@
+.featured {
+    @apply flex-[2] p-3 shadow-[2px_4px_10px_1px_#c9c9c978];
+
+    .top {
+        @apply flex items-center justify-between text-gray-500;
+
+        .title {
+            @apply text-base font-medium;
+        }
+    }
+
+    .bottom {
+        @apply p-5 flex flex-col items-center justify-center gap-4;
+
+        .featuredChart {
+            @apply h-24 w-24;
+        }
+
+        .title {
+            @apply text-base font-medium text-gray-500;
+        }
+
+        .amount {
+            @apply text-3xl;
+        }
+
+        .desc {
+            @apply font-light text-sm text-gray-500 text-center;
+        }
+
+        .summary {
+            @apply w-full flex align-middle justify-between;
+
+            .item {
+                @apply text-center;
+
+                .itemTitle {
+                    @apply text-sm text-gray-500;
+                }
+
+                .itemResult {
+                    @apply flex items-center m-3 text-sm;
+
+                    &.positive {
+                        @apply text-green-500
+                    }
+
+                    &.negative {
+                        @apply text-red-500
+                    }
+
+                    .resultAmount {
+                        @apply text-gray-500;
+                    }
+                }
+            }
+        }
+    }
+}

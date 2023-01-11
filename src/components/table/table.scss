@@ -1,0 +1,21 @@
+.table{
+    .cellWrapper {
+        @apply flex items-center;
+
+            .image {
+                @apply w-8 h-8 rounded-full object-cover mr-3;
+            }
+        }
+    
+        .status {
+            @apply p-1 rounded;
+    
+            &.Approved {
+                @apply text-green-500 bg-[#00800027];
+            }
+    
+            &.Pending {
+                @apply text-[goldenrod] bg-[#bdbd031a];                
+            }
+        }
+}

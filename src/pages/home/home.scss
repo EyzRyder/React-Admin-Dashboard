@@ -1,11 +1,19 @@
-.home{
-    @apply bg-white;
+.home {
 
-    .widgets{
+    .widgets,
+    .charts {
         @apply flex p-5 gap-5;
     }
-    .title {
-        @apply text-4xl font-bold text-GMB-blue;
+
+    .charts {
+        @apply py-1 px-5;
+    }
+
+    .listContainer {
+        @apply p-5 m-5 shadow-[2px_4px_10px_1px_#c9c9c978];
+
+        .listTitle {
+            @apply font-medium text-gray-500 mb-4;
+        }
     }
 }
-
