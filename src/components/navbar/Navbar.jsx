@@ -26,7 +26,7 @@ export const Navbar = () => {
           </div>
 
           <div className="item">
-            <ThemeIcon className='icon mode'/>
+            <ThemeIcon className='icon'/>
           </div>
           <div className="item">
             <FullscreenExitOutlinedIcon className='icon'/>

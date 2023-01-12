@@ -16,25 +16,26 @@
             @apply flex items-center;
 
             .item {
-                @apply relative flex items-center m-5;
+                @apply relative flex items-center m-5 cursor-pointer;
 
-                .counter{
+                .counter {
                     @apply h-4 w-4 bg-red-500 rounded-full text-white flex items-center justify-center text-xs font-bold absolute top-[-5px] right-[-5px];
                 }
-                .avatar{
+
+                .avatar {
                     @apply h-8 w-8 rounded-full;
                 }
-                }
-                .icon{
-                    @apply text-xl;
+            }
 
-                    &.mode {
-                            @apply text-gray-500 mr-3 ml-4 transition duration-300 ease-in-out hover:text-GMB-yellow cursor-pointer;
-                    
-                            &:first {
-                                @apply ml-auto mr-4;
-                            }
-                }
+            .icon {
+                @apply text-xl;
+
+
+            }
+
+            .colorOption {
+                @apply text-gray-500 mr-3 ml-4 transition duration-300 ease-in-out hover:text-GMB-yellow cursor-pointer;
+
             }
         }
     }
