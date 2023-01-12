@@ -37,13 +37,13 @@ const router = createBrowserRouter(
 
       <Route path='orders' >
         <Route index element={<List />} />
-        <Route path=':productId' element={<Single />} />
+        <Route path=':orderId' element={<Single />} />
         <Route path='new' element={<New inputs={productInputs} title="Add New Product" />} />
       </Route>
 
       <Route path='deliveries' >
         <Route index element={<List />} />
-        <Route path=':productId' element={<Single />} />
+        <Route path=':deliveriesId' element={<Single />} />
         <Route path='new' element={<New inputs={productInputs} title="Add New Product" />} />
       </Route>
 
