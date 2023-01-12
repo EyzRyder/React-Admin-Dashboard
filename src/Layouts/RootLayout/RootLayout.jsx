@@ -4,9 +4,9 @@ import { Sidebar } from "../../components/sidebar/Sidebar";
 
 const RootLayout = () => {
     return (
-        <div className="flex">
+        <div className="App">
             <Sidebar />
-            <main className="flex-[6]">
+            <main className="flex-[6] bg-white text-black dark:text-[#9c9c9c] dark:bg-[#222]">
                 <Navbar />
                 <Outlet />
             </main>

@@ -17,98 +17,123 @@ export const Sidebar = () => {
     return (
         <nav className="sidebar">
             <div className="top">
-                <Link to="/"> 
+                <Link to="/">
                     <span className="logo">Bessi Dev</span>
                 </Link>
             </div>
             <div className="center">
                 <ul>
                     <p className="title">MAIN</p>
-                    <li>
-                        <DashboardIcon className="icon" />
-                        <span>
-                            Dashboard
-                        </span>
-                    </li>
-                    <p className="title">LISTS</p>
-                    <li>
-                        <Link to="/users">
-                        <PermIdentityOutlinedIcon className="icon" />
-                        <span>
-                            Users
+                    <NavLink to="/">
+                        <li>
+                            <DashboardIcon className="icon" />
+                            <span>
+                                Dashboard
                             </span>
-                        </Link>
-                    </li>
-                    <li>
-                        <StoreIcon className="icon" />
-                        <span>
-                            Products
-                        </span>
-                    </li>
-                    <li>
-                        <CreditCardOutlinedIcon className="icon" />
-                        <span>
-                            Orders
-                        </span>
-                    </li>
-                    <li>
-                        <LocalShippingIcon className="icon" />
-                        <span>
-                            Delivery
-                        </span>
-                    </li>
+                        </li>
+                    </NavLink>
+                    <p className="title">LISTS</p>
+                    <NavLink to="/users">
+                        <li>
+                            <PermIdentityOutlinedIcon className="icon" />
+                            <span>
+                                Users
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/products">
+                        <li>
+                            <StoreIcon className="icon" />
+                            <span>
+                                Products
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/orders">
+                        <li>
+                            <CreditCardOutlinedIcon className="icon" />
+                            <span>
+                                Orders
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/deliveries">
+                        <li>
+                            <LocalShippingIcon className="icon" />
+                            <span>
+                                Delivery
+                            </span>
+                        </li>
+                    </NavLink>
                     <p className="title">USEFUL</p>
-                    <li>
-                        <InsertChartIcon className="icon" />
-                        <span>
-                            Stats
-                        </span>
-                    </li>
-                    <li>
-                        <NotificationsNoneOutlinedIcon className="icon" />
-                        <span>
-                            Notifications
-                        </span>
-                    </li>
+                    <NavLink to="/">
+                        <li>
+                            <InsertChartIcon className="icon" />
+                            <span>
+                                Stats
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/">
+                        <li>
+                            <NotificationsNoneOutlinedIcon className="icon" />
+                            <span>
+                                Notifications
+                            </span>
+                        </li>
+                    </NavLink>
                     <p className="title">SERVICE</p>
-                    <li>
-                        <SettingsSystemDaydreamOutlinedIcon className="icon" />
-                        <span>
-                            System Heath
-                        </span>
-                    </li>
-                    <li>
-                        <PsychologyOutlinedIcon className="icon" />
-                        <span>
-                            Logs
-                        </span>
-                    </li>
-                    <li>
-                        <SettingsApplicationsIcon className="icon" />
-                        <span>
-                            Settings
-                        </span>
-                    </li>
+                    <NavLink to="/">
+                        <li>
+                            <SettingsSystemDaydreamOutlinedIcon className="icon" />
+                            <span>
+                                System Heath
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/">
+
+                        <li>
+                            <PsychologyOutlinedIcon className="icon" />
+                            <span>
+                                Logs
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/">
+                        <li>
+                            <SettingsApplicationsIcon className="icon" />
+                            <span>
+                                Settings
+                            </span>
+                        </li>
+                    </NavLink>
                     <p className="title">USER</p>
-                    <li>
-                        <AccountCircleOutlinedIcon className="icon" />
-                        <span>
-                            Profile
-                        </span>
-                    </li>
-                    <li>
-                        <ExitToAppOutlinedIcon className="icon" />
-                        <span>
-                            Logout
-                        </span>
-                    </li>
+                    <NavLink to="/">
+
+                        <li>
+                            <AccountCircleOutlinedIcon className="icon" />
+                            <span>
+                                Profile
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/">
+                        <li>
+                            <ExitToAppOutlinedIcon className="icon" />
+                            <span>
+                                Logout
+                            </span>
+                        </li>
+                    </NavLink>
                 </ul>
             </div>
-            <div className="bottom">
+            {/* <div className="bottom"> */}
+                {/* <ThemeIcon /> */}
+                {/* <div className="colorOption"></div>
                 <div className="colorOption"></div>
-                <div className="colorOption"></div>
-                <div className="colorOption"></div>
-            </div>
+                <div className="colorOption"></div> */}
+            {/* </div> */}
             {/* <nav>
                 <NavLink to="/" className="NavLink">Home</NavLink>
                 <NavLink to="user" className="NavLink">User</NavLink>
@@ -117,3 +142,4 @@ export const Sidebar = () => {
         </nav>
     )
 }
+

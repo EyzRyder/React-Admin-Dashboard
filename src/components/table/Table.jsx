@@ -61,11 +61,10 @@ const rows = [
 
 export const Table = () => {
     return (
-            <TableContainer component={Paper} className="table">
+        <TableContainer component={Paper} className="table dark:bg-[#111]">
                 <TableMUI sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell className="tableCell">Tracking ID</TableCell>
                             <TableCell className="tableCell">Product</TableCell>
                             <TableCell className="tableCell">Customer</TableCell>
                             <TableCell className="tableCell">Date</TableCell>

@@ -6,7 +6,9 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
-
+import useDarkMode from '../../hooks/useDarkMode';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import ModeNightIcon from '@mui/icons-material/ModeNight';
 export const Navbar = () => {
   return (
     <nav className='navbar'>
@@ -24,7 +26,7 @@ export const Navbar = () => {
           </div>
 
           <div className="item">
-            <DarkModeOutlinedIcon className='icon'/>
+            <ThemeIcon className='icon mode'/>
           </div>
           <div className="item">
             <FullscreenExitOutlinedIcon className='icon'/>
@@ -51,3 +53,17 @@ export const Navbar = () => {
     </nav>
   )
 }
+
+const ThemeIcon = () => {
+  const [darkTheme, setDarkTheme] = useDarkMode();
+  const handleMode = () => setDarkTheme(!darkTheme);
+  return (
+    <span onClick={handleMode}>
+      {darkTheme ? (
+        <WbSunnyIcon className='colorOption' />
+      ) : (
+        <ModeNightIcon className='colorOption' />
+      )}
+    </span>
+  );
+};

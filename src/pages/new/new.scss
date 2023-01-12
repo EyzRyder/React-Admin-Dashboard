@@ -1,4 +1,47 @@
-.new{
+.new {
+
+    .top,
+    .bottom {
+        @apply shadow-[2px_4px_10px_1px_#c9c9c978] p-3 m-5 flex;
+
+        h1 {
+            @apply text-gray-300 text-xl;
+        }
+
+        .left {
+            @apply flex-1 text-center;
+
+            img {
+                @apply w-auto h-full rounded-full object-cover;
+            }
+        }
+
+        .right {
+            @apply flex-[2];
+
+            form {
+                @apply flex flex-wrap gap-8 justify-around;
+                .formInput {
+                    @apply w-[40%];
+                    label {
+                        @apply flex items-center gap-3;
+                        .icon { 
+                            @apply cursor-pointer;
+                        }
+                    }
+
+                    input {
+                        @apply w-full p-1 border-b border-gray-500;
+                    }
+                }
+
+                button {
+                    @apply w-[150px] p-3 bg-teal-500 text-white font-bold cursor-pointer mt-3 hover:bg-teal-300 ;
+                }
+            }
+        }
+    }
+
+
 
 }
-

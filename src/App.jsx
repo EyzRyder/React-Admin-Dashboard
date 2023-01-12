@@ -12,6 +12,7 @@ import Login from './pages/login/Login';
 import New from './pages/new/New';
 import NotFound from './pages/NotFound/NotFound';
 import Single from './pages/single/Single';
+import { productInputs, userInputs } from "./formSource";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,13 +26,25 @@ const router = createBrowserRouter(
       <Route path='users'>
         <Route index element={<List />} />
         <Route path=':userId' element={<Single />} />
-        <Route path='new' element={<New />} />
+        <Route path='new' element={<New inputs={userInputs} title="Add New User" />} />
       </Route>
 
       <Route path='products' >
         <Route index element={<List />} />
         <Route path=':productId' element={<Single />} />
-        <Route path='new' element={<New />} />
+        <Route path='new' element={<New inputs={productInputs} title="Add New Product" />} />
+      </Route>
+
+      <Route path='orders' >
+        <Route index element={<List />} />
+        <Route path=':productId' element={<Single />} />
+        <Route path='new' element={<New inputs={productInputs} title="Add New Product" />} />
+      </Route>
+
+      <Route path='deliveries' >
+        <Route index element={<List />} />
+        <Route path=':productId' element={<Single />} />
+        <Route path='new' element={<New inputs={productInputs} title="Add New Product" />} />
       </Route>
 
       <Route path='*' element={<NotFound />} />
