@@ -19,6 +19,8 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "@mui/x-data-grid": "^5.17.18",
+    "dotenv": "^16.0.3",
+    "firebase": "^9.15.0",
     "mui": "^0.0.1",
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",

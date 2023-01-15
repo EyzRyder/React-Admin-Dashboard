@@ -118,11 +118,11 @@ export const Sidebar = () => {
                             </span>
                         </li>
                     </NavLink>
-                    <NavLink to="/">
+                    <NavLink to="/login">
                         <li>
                             <ExitToAppOutlinedIcon className="icon" />
                             <span>
-                                Logout
+                                Login
                             </span>
                         </li>
                     </NavLink>

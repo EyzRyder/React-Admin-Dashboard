@@ -12,7 +12,7 @@
             @apply flex-1 text-center;
 
             img {
-                @apply w-auto h-full rounded-full object-cover;
+                @apply w-full h-auto rounded-full object-cover;
             }
         }
 
@@ -37,6 +37,10 @@
 
                 button {
                     @apply w-[150px] p-3 bg-teal-500 text-white font-bold cursor-pointer mt-3 hover:bg-teal-300 ;
+
+                    &:disabled{
+                        @apply bg-teal-800 cursor-not-allowed;
+                    }
                 }
             }
         }
