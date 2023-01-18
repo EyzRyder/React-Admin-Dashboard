@@ -2,7 +2,7 @@
     @apply h-[600px] p-5;
 
     .datagrid{
-        @apply dark:text-gray-500 dark:border-none;
+        @apply w-full dark:text-gray-500 dark:border-none;
     }
 
         .viewButton,

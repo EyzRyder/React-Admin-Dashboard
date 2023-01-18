@@ -6,6 +6,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+
+import { useEffect, useState } from "react";
+import {
+    collection,
+    onSnapshot
+} from "firebase/firestore";
+import { db } from "../../firebase";
+
 const rows = [
     {
         id: 1143155,
@@ -60,40 +68,74 @@ const rows = [
 ];
 
 export const Table = () => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+
+        const unsub = onSnapshot(
+            collection(db, "orders"),
+            (snapShot) => {
+                let list = [];
+                snapShot.docs.forEach((doc) => {
+                    const date = doc.data().date.toDate().toString().slice(4, 16);
+                    list.push({
+                        id: doc.id,
+                        date: date,
+                        amount: doc.data().amount,
+                        customer: doc.data().customer,
+                        img: doc.data().img,
+                        method: doc.data().method,
+                        product: doc.data().product,
+                        status: doc.data().status
+                    });
+                });
+                setData(list);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+
+        return () => {
+            unsub();
+        };
+    }, []);
     return (
         <TableContainer component={Paper} className="table dark:bg-[#111]">
-                <TableMUI sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell className="tableCell">Product</TableCell>
-                            <TableCell className="tableCell">Customer</TableCell>
-                            <TableCell className="tableCell">Date</TableCell>
-                            <TableCell className="tableCell">Amount</TableCell>
-                            <TableCell className="tableCell">Payment Method</TableCell>
-                            <TableCell className="tableCell">Status</TableCell>
+            <TableMUI sx={{ minWidth: 650 }} aria-label="simple table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell className="tableCell">Id</TableCell>
+                        <TableCell className="tableCell">Product</TableCell>
+                        <TableCell className="tableCell">Customer</TableCell>
+                        <TableCell className="tableCell">Date</TableCell>
+                        <TableCell className="tableCell">Amount</TableCell>
+                        <TableCell className="tableCell">Payment Method</TableCell>
+                        <TableCell className="tableCell">Status</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {data?.map((row) => (
+                        <TableRow key={row.id}>
+                            <TableCell className="tableCell">{row.id}</TableCell>
+                            <TableCell className="tableCell">
+                                <div className="cellWrapper">
+                                    <img src={row.img} alt="" className="image" />
+                                    {row.product}
+                                </div>
+                            </TableCell>
+                            <TableCell className="tableCell">{row.customer}</TableCell>
+                            <TableCell className="tableCell">{row.date}</TableCell>
+                            <TableCell className="tableCell">{row.amount}</TableCell>
+                            <TableCell className="tableCell">{row.method}</TableCell>
+                            <TableCell className="tableCell">
+                                <span className={`status ${row.status}`}>{row.status}</span>
+                            </TableCell>
                         </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <TableRow key={row.id}>
-                                <TableCell className="tableCell">{row.id}</TableCell>
-                                <TableCell className="tableCell">
-                                    <div className="cellWrapper">
-                                        <img src={row.img} alt="" className="image" />
-                                        {row.product}
-                                    </div>
-                                </TableCell>
-                                <TableCell className="tableCell">{row.customer}</TableCell>
-                                <TableCell className="tableCell">{row.date}</TableCell>
-                                <TableCell className="tableCell">{row.amount}</TableCell>
-                                <TableCell className="tableCell">{row.method}</TableCell>
-                                <TableCell className="tableCell">
-                                    <span className={`status ${row.status}`}>{row.status}</span>
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </TableMUI>
-            </TableContainer>
+                    ))}
+                </TableBody>
+            </TableMUI>
+        </TableContainer>
     )
 }
